@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+<body>
+   <center><h1 style="color: brown;">My Image<br>Gallery</h1></center>
+    <div class="gallery">
+<img style="padding-left: 50px;padding-top: 50px;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIJ156_WVxbcjJexB2G_M4F5VeE6tQ0BCaxA&s"height="240px"onmouseover="highlight(this)" onmouseout="unhighlight(this)">
+<img style="padding-left: 90px;padding-top: 50px;"src="https://st.depositphotos.com/2001755/3622/i/450/depositphotos_36220949-stock-photo-beautiful-landscape.jpg"height="240px"width="290px"onmouseover="highlight(this)" onmouseout="unhighlight(this)"> 
+<img style="padding-left: 90px;padding-top: 50px;"src="https://images.pexels.com/photos/414612/pexels-photo-414612.jpeg?cs=srgb&dl=pexels-souvenirpixels-414612.jpg&fm=jpg"height="230px"onmouseover="highlight(this)" onmouseout="unhighlight(this)">  
+<img style="padding-top:50px;padding-left: 90px;" src="https://images.pexels.com/photos/906150/pexels-photo-906150.jpeg?auto=compress&cs=tinysrgb&w=600"height="250px"onmouseover="highlight(this)" onmouseout="unhighlight(this)">
+<img style="padding-top:50px;padding-left: 90px;padding-right: 20px;" src="https://images.pexels.com/photos/674010/pexels-photo-674010.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"height="250px"width="300px"onmouseover="highlight(this)" onmouseout="unhighlight(this)">
+<img style="padding-top:50px;padding-left: 70px;" src="https://images.pexels.com/photos/1133957/pexels-photo-1133957.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"height="250px"onmouseover="highlight(this)" onmouseout="unhighlight(this)">
+<img style="padding-top:50px;padding-left: 70px;" src="https://images.pexels.com/photos/326055/pexels-photo-326055.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"height="250px "onmouseover="highlight(this)" onmouseout="unhighlight(this)">
+<img style="padding-top:50px;padding-left: 90px;" src="https://images.pexels.com/photos/919278/pexels-photo-919278.jpeg?auto=compress&cs=tinysrgb&w=600"height="250px"width="300px"onmouseover="highlight(this)" onmouseout="unhighlight(this)">
+<center><h1 style="padding-top: 20px;color: blue;">Some More Beautiful Images</h1></center>
+<div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="https://i0.wp.com/picjumbo.com/wp-content/uploads/beautiful-nature-mountain-scenery-with-flowers-free-photo.jpg?w=600&quality=80" class="d-block w-100" alt="..."height="300px"width="50px">
+    </div>
+    <div class="carousel-item">
+      <img src="https://media.istockphoto.com/id/517188688/photo/mountain-landscape.jpg?s=1024x1024&w=0&k=20&c=z8_rWaI8x4zApNEEG9DnWlGXyDIXe-OmsAyQ5fGPVV8=" class="d-block w-100" alt="..."height="300px">
+    </div>
+    <div class="carousel-item">
+      <img src="https://img.freepik.com/free-photo/painting-mountain-lake-with-mountain-background_188544-9126.jpg?size=626&ext=jpg&ga=GA1.1.2008272138.1720915200&semt=sph" class="d-block w-100" alt="..."height="300px">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+<center><h1 style="padding-top: 30px;">Card</h1></center>
+<center><div class="card" style="width: 18rem;">
+  <img src="https://images.pexels.com/photos/736230/pexels-photo-736230.jpeg?cs=srgb&dl=pexels-jonaskakaroto-736230.jpg&fm=jpg" class="card-img-top" alt="..."height="100px"weight="100px">
+  <div class="card-body">
+    <h5 class="card-title">Card title</h5>
+    <p class="card-text">Flowers are the most beautiful creation</p>
+    <a href="https://en.wikipedia.org/wiki/Flower" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div></center>
+</div>
+<script>
+    const gallery = document.querySelector('.gallery');
+const images = gallery.querySelectorAll('img');
+
+let currentImage = 0;
+
+gallery.addEventListener('click', (e) => {
+  if (e.target.tagName === 'IMG') {
+    currentImage = Array.prototype.indexOf.call(images, e.target);
+    showImage(currentImage);
+  }
+});
+
+function showImage(index) {
+  images.forEach((image) => {
+    image.style.display = 'none';
+  });
+  images[index].style.display = 'block';
+}
+function highlight(image) {
+  image.style.boxShadow = "0 0 10px rgba(0, 0, 0, 0)";
+  image.style.border = "2px solid #fff";
+}
+
+function unhighlight(image) {
+  image.style.boxShadow = "";
+  image.style.border = "";
+}
+</script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    </body>
+</html>
